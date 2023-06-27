@@ -1,10 +1,5 @@
 from Crypto.Ciphers import AES
 
-def bad1():
-    # ruleid: empty-aes-key
-    cipher = AES.new("", AES.MODE_CFB, iv)
-    msg = iv + cipher.encrypt(b'Attack at dawn')
-
 def bad2(): #semgrep supressed
     # nosemgrep
     cipher = AES.new("", AES.MODE_CFB, iv)
@@ -19,7 +14,7 @@ def bad4(): #semgrep supressed
     cipher = AES.new("", AES.MODE_CFB, iv) # nosemgrep
     msg = iv + cipher.encrypt(b'Attack at dawn')
 
-def bad3(): #semgrep supressed
+def bad5(): #semgrep supressed
     cipher = AES.new("", AES.MODE_CFB, iv) # nosemgrep: empty-aes-key
     msg = iv + cipher.encrypt(b'Attack at dawn')
 
